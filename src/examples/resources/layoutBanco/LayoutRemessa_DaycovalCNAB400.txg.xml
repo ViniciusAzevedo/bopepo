@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<txg:Texgit xmlns:txg="http://jrimum.org/texgit"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://jrimum.org/texgit http://jrimum.org/texgit/chrome/site/TexgitSchema.xsd" 
+version="1.0-academic">
+    
+    <FlatFile>    
+        <layout>    
+            <name>DaycovalRemessa400</name>    
+            <version>Version 01, Published: 15/04/2016</version>    
+            <description>    
+                XML para funcionamento com o Jrimum com Texgit.    
+                Daycoval    
+                Cnab 400    
+            </description>    
+        </layout>    
+        <GroupOfRecords>    
+            <Record name="Header" description="Protocolo de comunicação">    
+                <GroupOfFields>    
+                    <IdType name="IdentificacaoRegistro" value="0" length="1" position="1" />    
+                    <Field name="TipoOperacao" value="1" length="1" padding="ZERO_LEFT" />    
+                    <Field name="IdentificacaoExtensoTipoOperacao" value="REMESSA" length="7" />    
+                    <Field name="IdentificacaoTipoServico" value="1" length="2" padding="ZERO_LEFT" />    
+                    <Field name="IdentificacaoExtensoTipoServico" value="COBRANCA" length="8" />    
+                    <Field name="CodigoEmpresa" length="20" /> 
+                    <Field name="NomeEmpresa" length="30" /> 
+                    <Field name="CodigoBanco" value="707" length="3" />      
+                    <Field name="NomeBanco" value="BANCO DAYCOVAL" length="15" />  
+                    <Field name="DataGravacao" length="6" type="DATE" format="DATE_DDMMYY" />                        
+                    <Field name="Filler" length="294" />
+                    <Field name="SequencialRegistro" length="6" padding="ZERO_LEFT"/>           
+                </GroupOfFields>    
+            </Record>    
+            <Record name="TransacaoTitulo" repeatable="true" description="Registro de Transação - Tipo 1">    
+                <GroupOfFields>    
+                    <IdType name="IdentiFicacaoRegistroDetalhe" value="1" length="1" position="1" />    
+                    <Field name="TipoInscricaoCedente" value="02" length="2" padding="ZERO_LEFT" />    
+                    <Field name="NumeroCpfCnpjCedente" length="14" padding="ZERO_LEFT"/>   
+                    <Field name="CodigoEmpresa" length="20" /> 
+                    <Field name="CodigoControleEmpresa" length="25"/>
+                    <Field name="NossoNumero" length="8" padding="ZERO_LEFT" /> 
+                    <Field name="Filler" length="5" />
+                    <Field name="Filler" length="8" />
+                    <Field name="Filler" length="24" />
+                    <Field name="NumeroPrestacao" length="10" padding="ZERO_LEFT" /> 
+                    <Field name="DataVencimento" length="6" type="DATE" format="DATE_DDMMYY" />    
+                    <Field name="ValorTitulo" length="13" type="BIGDECIMAL" format="DECIMAL_DD" padding="ZERO_LEFT" />
+                    <Field name="CodigoBanco" value="707" length="3" />
+                    <Field name="PrefixoAgencia" length="4" padding="ZERO_LEFT" />    
+                    <Field name="DigitoVerificadorAgencia" length="1" />  
+                    <Field name="EspecieTitulo" length="2" padding="ZERO_LEFT" />  
+                    <Field name="AceiteTitulo" length="1" />  
+                    <Field name="DataEmissao" length="6" type="DATE" format="DATE_DDMMYY" />  
+                    <Field name="Zeros" value="0" length="2" padding="ZERO_LEFT" />  
+                    <Field name="Zeros" value="0" length="2" padding="ZERO_LEFT" />  
+                    <Field name="JurosMoraDiaAtraso" length="13" padding="ZERO_LEFT" /> 
+                    <Field name="DescontoAte" length="6" type="DATE" format="DATE_DDMMYY" />
+                    <Field name="ValorDesconto" length="13" type="BIGDECIMAL" format="DECIMAL_DD" padding="ZERO_LEFT" /> 
+                    <Field name="Zeros" value="0" length="13" padding="ZERO_LEFT" /> 
+                    <Field name="ValorAbatimento" length="13" type="BIGDECIMAL" format="DECIMAL_DD" padding="ZERO_LEFT" /> 
+                    <Field name="TipoInscricaoSacado" length="2" padding="ZERO_LEFT" />  
+                    <Field name="NumeroCnpjCpfSacado" length="14" padding="ZERO_LEFT" />  
+                    <Field name="NomeSacado" length="30" />  
+                    <Field name="ComplementoRegistro" length="10" />  
+                    <Field name="EnderecoSacado" length="40" />  
+                    <Field name="BairroSacado" length="12" />  
+                    <Field name="CepEnderecoSacado" length="8" padding="ZERO_LEFT" />  
+                    <Field name="CidadeSacado" length="15" />  
+                    <Field name="UfCidadeSacado" length="2" /> 
+                    <Field name="NomeAvalista" length="30" />  
+                    <Field name="ComplementoRegistro" length="4" />  
+                    <Field name="Filler" length="6" />
+                    <Field name="DiasProtesto" length="2" padding="ZERO_LEFT" />    
+                    <Field name="Moeda" length="1" padding="ZERO_LEFT" />     
+                    <Field name="SequencialRegistro" length="6" padding="ZERO_LEFT" />                      
+                </GroupOfFields>    
+            </Record>    
+            <Record name="Trailler">    
+                <GroupOfFields>    
+                    <IdType name="CodigoDoRegistro" value="9" length="1" position="1" />    
+                    <Field name="Filler" length="393" />    
+                    <Field name="NumeroSequencialRegistro" length="6" padding="ZERO_LEFT" />    
+                </GroupOfFields>    
+            </Record>    
+        </GroupOfRecords>    
+    </FlatFile>    
+    
+</txg:Texgit> 
